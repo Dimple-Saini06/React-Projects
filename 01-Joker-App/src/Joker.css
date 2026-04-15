@@ -1,0 +1,25 @@
+.jokeDiv {
+    border : 1px solid lightgreen;
+    border-radius : 14px;
+    padding : 14px;
+    width : 50%;
+    margin : auto;
+}
+
+h3 {
+    color : white;
+}
+.btn {
+    padding : 10px 20px;
+    border-radius : 5px;
+    border : none;
+    outline : none;
+    cursor : pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.btn:hover {
+    /* border : 5px solid blue; */
+    background: linear-gradient(135deg, #a777e3, #6e8efb);
+}
