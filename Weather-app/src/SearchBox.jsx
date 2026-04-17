@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './SearchBox.css'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import WeatherApp from './WeatherApp';
 
 export default function SearchBox() {
     let[city, setCity] = useState("");
@@ -15,6 +16,7 @@ export default function SearchBox() {
         console.log(jsonResponse);
 
         let result = {
+            city : city,
             temp : jsonResponse.main.temp,
             tempMin : jsonResponse.main.temp_min,
             tempMax : jsonResponse.main.temp_max,
@@ -26,9 +28,10 @@ export default function SearchBox() {
         }
 
         console.log(result);
+        return result;
     }
 
-    let handleChange = (event) => {
+    let handleChange = (info) => {
         setCity(event.target.value);
     }
 
@@ -36,14 +39,14 @@ export default function SearchBox() {
         event.preventDefault();
         console.log(city);
         getWeatherInfo();
-        setCity("");
-        
+        setCity(""); 
     }
+    
     return (
         <div className='SearchBox'>
-            <h3>
+            <h2>
                 Search for the weather
-            </h3>
+            </h2>
             <form onSubmit={handleSubmit}>
                 <TextField 
                     id="city" 
