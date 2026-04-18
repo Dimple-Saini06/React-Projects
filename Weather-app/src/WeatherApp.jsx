@@ -14,12 +14,14 @@ export default function WeatherApp() {
         weather : "overcast cloud"
     })
 
-    
+    let updateInfo = (newInfo) => {
+        setWeatherInfo(newInfo);
+    }
 
     return (
-        <>
-           <SearchBox /> 
+        <div>
+           <SearchBox updateInfo = {updateInfo} /> 
            <InfoBox info={weatherInfo} />
-        </>
+        </div>
     )
 }
